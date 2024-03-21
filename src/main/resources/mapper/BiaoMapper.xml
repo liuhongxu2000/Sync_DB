@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hv.sync.mapper.BiaoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hv.sync.domain.Biao">
+        <result column="vin" property="vin" />
+        <result column="ctype" property="ctype" />
+    </resultMap>
+
+    <insert id="insert" parameterType="com.hv.sync.domain.Biao">
+        INSERT INTO biao (vin, ctype)
+        VALUES (#{vin}, #{ctype})
+    </insert>
+
+    <select id="findByVin" parameterType="java.lang.String" resultType="com.hv.sync.domain.Biao">
+        SELECT * FROM biao WHERE vin = #{vin}
+    </select>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hv.sync.mapper.DockerBiaoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hv.sync.domain.DockerBiao">
+        <result column="vin" property="vin" />
+        <result column="ctype" property="ctype" />
+    </resultMap>
+
+    <select id="selectVinAndCtype" resultMap="BaseResultMap">
+        SELECT vin, ctype
+        FROM docker_biao
+    </select>
+
+</mapper>
